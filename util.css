@@ -1,0 +1,15 @@
+.table-wrap{
+    display: table;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.table-cell{
+    display: table-cell;
+}
+
+.vertical-middle{
+    vertical-align: middle;
+}
