@@ -33,3 +33,7 @@ for the elements that has property of absolute or fixed
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+.absolute{
+    position:absolute;
+}
