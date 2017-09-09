@@ -13,3 +13,13 @@
 .vertical-middle{
     vertical-align: middle;
 }
+
+
+/*
+for the elements that has property of absolute or fixed
+*/
+.vertical-middle-ab-fix{
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
