@@ -1,3 +1,13 @@
+/*
+<div class="table-wrap">
+<div class="table-cell text-center vertical-middle>
+div,ul...(elements)
+</div>
+</div>
+
+elements can be at the center position either horizontal or vertical
+*/
+
 .table-wrap{
     display: table;
 }
