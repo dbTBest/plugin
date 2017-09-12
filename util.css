@@ -10,6 +10,7 @@ elements can be at the center position either horizontal or vertical
 
 .table-wrap{
     display: table;
+    width:100%;
 }
 
 .text-center{
