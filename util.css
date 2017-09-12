@@ -41,8 +41,8 @@ for the elements that has property of absolute or fixed
 /*
 for the element's width is 0 that has class of row is absolute
 */
-.container .row
-,.container-fluid .row{
+.container .row.absolute
+,.container-fluid .row.absolute{
     width: 100%;
 }
 
