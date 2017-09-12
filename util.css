@@ -10,7 +10,7 @@ elements can be at the center position either horizontal or vertical
 
 .table-wrap{
     display: table;
-    width:100%;
+    width:100%; //if not width only depdent on table-cell width ,so probably no center on horizontal
 }
 
 .text-center{
