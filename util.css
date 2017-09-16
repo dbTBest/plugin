@@ -89,3 +89,7 @@ for the element's width is 0 that has class of row is absolute
     line-height: 24px;
     font-weight: 400;
 }
+
+.transition{
+    transition: all .5s ease-in-out;
+}
