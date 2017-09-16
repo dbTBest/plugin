@@ -70,3 +70,15 @@ for the element's width is 0 that has class of row is absolute
     font-weight:400;
     line-height:28px;
 }
+
+.p-font{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.body-font{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+}
