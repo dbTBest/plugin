@@ -1,0 +1,70 @@
+.position(@left,@top){
+    left:@left;
+    top:@top;
+}
+
+.bg(@backgroundColor){
+    background-color: @backgroundColor;
+}
+
+.size(@width,@height){
+    width:@width;
+    height:@height;
+} 
+
+/*
+<div class="table-wrap">
+<div class="table-cell text-center vertical-middle>
+div,ul...(elements)
+</div>
+</div>
+
+elements can be at the center position either horizontal or vertical
+*/
+
+.table-wrap{
+    display: table;
+    width:100%; //tabel element's default size is 0.if not to set width only depdent on table-cell width ,so probably no center on horizontal
+}
+
+.text-center{
+    text-align: center;
+}
+
+.table-cell{
+    display: table-cell;
+}
+
+.vertical-middle{
+    vertical-align: middle;
+}
+
+
+/*
+for the elements that has property of absolute or fixed
+*/
+.vertical-middle-ab-fix{
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.absolute{
+    position:absolute;
+}
+
+/*
+for the element's width is 0 that has class of row is absolute
+*/
+.container .row.absolute
+,.container-fluid .row.absolute{
+    width: 100%;
+}
+
+.color-white{
+    color: white;
+}
+
+.relative{
+    position:relative;
+}
