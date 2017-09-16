@@ -195,3 +195,11 @@ when hover the link border will extend at the direction of right and a arrow-rig
 .bg-white-hover:hover{
     background-color: white;
 }
+
+.hover-opacity-down{
+    opacity: .3;
+}
+
+.link-hover-darker{
+    opacity: .3;
+}
