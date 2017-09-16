@@ -110,3 +110,10 @@ for the element's width is 0 that has class of row is absolute
     line-height: 28px;
 }
 
+.big-model-center-blod-font{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; ////Montserrat自定义字体
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
