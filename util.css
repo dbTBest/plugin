@@ -179,3 +179,8 @@ when hover the link border will extend at the direction of right and a arrow-rig
 .text-capitalize{
     text-transform: capitalize;
 }
+
+.color-commentText{
+    color: #888;
+}
+
