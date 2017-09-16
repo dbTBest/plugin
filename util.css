@@ -1,4 +1,4 @@
-/*
+/********************************
 <div class="table-wrap">
 <div class="table-cell text-center vertical-middle>
 div,ul...(elements)
@@ -6,11 +6,13 @@ div,ul...(elements)
 </div>
 
 elements can be at the center position either horizontal or vertical
+
+width:100% because tabel element's default size is 0.if not to set width only depdent on table-cell width ,so probably no center on horizontal
 */
 
 .table-wrap{
     display: table;
-    width:100%; //tabel element's default size is 0.if not to set width only depdent on table-cell width ,so probably no center on horizontal
+    width:100%; 
 }
 
 .text-center{
@@ -24,9 +26,12 @@ elements can be at the center position either horizontal or vertical
 .vertical-middle{
     vertical-align: middle;
 }
-
-
 /*
+***********************************
+*/
+
+
+/*********************************************
 for the elements that has property of absolute or fixed
 */
 .vertical-middle-ab-fix{
@@ -34,18 +39,24 @@ for the elements that has property of absolute or fixed
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+/*
+***********************************
+*/
 
 .absolute{
     position:absolute;
 }
 
-/*
+/*********************************
 for the element's width is 0 that has class of row is absolute
 */
 .container .row.absolute
 ,.container-fluid .row.absolute{
     width: 100%;
 }
+/*
+***********************************
+*/
 
 .color-white{
     color: white;
@@ -119,6 +130,7 @@ for the element's width is 0 that has class of row is absolute
 
 
 /*
+****************************************************
 <a href="" class="link-arrow-ani">
     get start
     <span class="glyphicon glyphicon-arrow-right"></span>
@@ -156,4 +168,14 @@ when hover the link border will extend at the direction of right and a arrow-rig
 .link-arrow-ani:hover{
     padding-right: 20px;
 }
+/*
+***********************************
+*/
 
+.bg-gray{
+    background-color: #f7f7f7;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
+}
