@@ -188,3 +188,10 @@ when hover the link border will extend at the direction of right and a arrow-rig
     background-color: #3eabb8;
 }
 
+.color-cyanine-hover:hover{
+    color: #3eabb8;
+}
+
+.bg-white-hover:hover{
+    background-color: white;
+}
