@@ -97,3 +97,16 @@ for the element's width is 0 that has class of row is absolute
 .relative{
     position: relative;
 }
+
+.big-model-big-title-font{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.big-model-small-title-font{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
