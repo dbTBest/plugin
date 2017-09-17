@@ -1,0 +1,51 @@
+@media (min-width:769px) and (max-width:991px){
+    /*
+    ****************************************************
+    <a href="" class="link-arrow-ani">
+        get start
+        <span class="glyphicon glyphicon-arrow-right"></span>
+    </a>
+
+    when hover the link border will extend at the direction of right and a arrow-right will slide with the direction of left and show
+
+    commnet:if you want change the position of the elements of class .link-arrow-right please use their parent Element's position attribute
+    or itself's position attributes except padding
+    */
+    .link-arrow-ani{
+        text-decoration: none !important;
+        display: inline-block;
+        font-family: font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #3eabb8;
+        position: relative;
+        transition: all .5s ease-in-out;
+        border-bottom: 2px solid #3eabb8;
+        padding: 0px !important;
+        letter-spacing: .1em;
+        font-weight: 600;
+        background-color: transparent!important;
+    }
+
+    .link-arrow-ani .glyphicon-arrow-right{
+        position: absolute;
+        right: 0px;
+        top:5px;
+        opacity: 0;
+        transform:translateX(60px);
+        transition: all .5s ease-in-out;
+    }
+
+    .link-arrow-ani:hover .glyphicon-arrow-right{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    .link-arrow-ani:hover{
+        padding-right: 20px;
+    }
+    /*
+    ***********************************
+    */
+}
