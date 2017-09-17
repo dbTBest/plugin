@@ -206,3 +206,32 @@ or itself's position attributes except padding
 .hover-opacity-down{
     opacity: .5;
 }
+
+/*
+a component for center navbar-nav 
+<ul class="nav navbar-center-nav">
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                           link <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                    </li>
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                       link <span class="glyphicon glyphicon-arrow-right"></span>
+                       </a>
+                    </li>
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                           link <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                    </li>
+               </ul>
+*/
+.navbar-center-nav>li{
+    display: inline-block !important;
+}
+
+.navbar-center-nav{
+    text-align:center;
+}
+
