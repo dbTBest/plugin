@@ -1,4 +1,7 @@
 @media (max-width:768px){
+    /************************
+    2(utilXs util)
+    */
     .navbar-center-nav>li{
         display: block !important;
         margin-left: 0px !important;
@@ -6,4 +9,7 @@
     .navbar-center-nav{
         text-align: left;
     }
+    /*
+    *******************************
+    */
 }
