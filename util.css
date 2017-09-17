@@ -137,6 +137,9 @@ for the element's width is 0 that has class of row is absolute
 </a>
 
 when hover the link border will extend at the direction of right and a arrow-right will slide with the direction of left and show
+
+commnet:if you want change the position of the elements of class .link-arrow-right please use their parent Element's position attribute
+or itself's position attributes except padding
 */
 .link-arrow-ani{
     text-decoration: none !important;
@@ -149,6 +152,10 @@ when hover the link border will extend at the direction of right and a arrow-rig
     position: relative;
     transition: all .5s ease-in-out;
     border-bottom: 2px solid #3eabb8;
+    padding: 0px !important;
+    letter-spacing: .1em;
+    font-weight: 600;
+    background-color: transparent!important;
 }
 
 .link-arrow-ani .glyphicon-arrow-right{
