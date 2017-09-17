@@ -1,0 +1,9 @@
+@media (max-width:768px){
+    .navbar-center-nav>li{
+        display: block !important;
+        margin-left: 0px !important;
+    }
+    .navbar-center-nav{
+        text-align: left;
+    }
+}
