@@ -157,6 +157,10 @@ for the element's width is 0 that has class of row is absolute
     opacity: .5;
 }
 
+.bg-white{
+    background-color: white;
+}
+
 /*************************************************
 2(util utilXs) a component for center navbar-nav 
 <ul class="nav navbar-center-nav">
