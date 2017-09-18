@@ -194,3 +194,23 @@ for the element's width is 0 that has class of row is absolute
 ***************************************************
 */
 
+.footer-font{
+    font-size: 13px;
+    color: #888;
+}
+
+.strong{
+    font-weight: 900;
+}
+
+.border-circle{
+    border-radius: 1000px;
+}
+
+.border-1px{
+    border-width: 1px;
+}
+
+.border-solid{
+    border-style: solid;
+}
