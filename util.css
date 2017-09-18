@@ -214,3 +214,11 @@ for the element's width is 0 that has class of row is absolute
 .border-solid{
     border-style: solid;
 }
+
+.bg-white{
+    background-color:white;
+}
+
+.bg-111{
+    background-color: #111;
+}
