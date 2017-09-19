@@ -1,3 +1,9 @@
+/*
+要和应用放在同一根目录下面 如果引用公共fonts会加载不到
+
+就像在blog.html中../fonts/.. 和fonts/..的区别
+*/
+
 @font-face {
   font-family: 'NavFont';
   font-style: normal;
