@@ -1,60 +1,228 @@
-.height(@height){
-    height:@height; 
+@import "utilLessRepository.less";
+@import "dataLess.less";
+
+/********************************
+1 (util)
+<div class="table-wrap">
+<div class="table-cell text-center vertical-middle>
+div,ul...(elements)
+</div>
+</div>
+
+you need set the height of .table-cell you want
+
+elements can be at the center position either horizontal or vertical
+
+width:100% because tabel element's default size is 0.if not to set width only depdent on table-cell width ,so probably no center on horizontal
+*/
+
+.table-wrap{
+    display: table;
+    width:100%; 
 }
 
-.width(@width){
-    height:@width; 
+.text-center{
+    text-align: center;
 }
 
-.size(@width,@height){
-    width: @width;
-    height: @height;
+.table-cell{
+    display: table-cell;
 }
 
-.bgImgUrl(@bgImgUrl){
-    background-image: @bgImgUrl;
+.vertical-middle{
+    vertical-align: middle;
+}
+/*
+***********************************
+*/
+
+
+/*********************************************
+for the elements that has property of absolute or fixed
+*/
+.vertical-middle-ab-fix{
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+/*
+***********************************
+*/
+
+.absolute{
+    position:absolute;
 }
 
-.bgImgPn(@bgImgPn){
-    background-position: @bgImgPn;
+/*********************************
+for the element's width is 0 that has class of row is absolute
+*/
+.container .row.absolute
+,.container-fluid .row.absolute{
+    width: 100%;
+}
+/*
+***********************************
+*/
+
+.color-white{
+    color: white;
 }
 
-.bgImgSe(@bgImgSe){
-    background-size: @bgImgSe;
+.relative{
+    position:relative;
 }
 
-.bgColor(@bgColor){
-    background-color: @bgColor;
+.color-cyanine{
+    color:#3eabb8;
 }
 
-.square(@size){
-    .size(@size,@size);
+.small-mode-date-font{
+    font-size:12px;
+    font-weight:700;
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.paddingLeft(@pl){
-    padding-left: @pl;
+.small-mode-title-font{
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
 }
 
-.paddingRight(@pr){
-    padding-right: @pr;
+.p-font{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
 }
 
-.paddingTop(@pt){
-    padding-top: @pt;
+.body-font{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
 }
 
-.paddingBottom(@pb){
-    padding-bottom: @pb;
+.link-font{
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
 }
 
-.padding(@paddingTp,@paddingRt,@paddingBm,@paddingLt){
-    padding: @arguments;
+.transition{
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
-.padding(@padding){
-    padding: @padding;
+.relative{
+    position: relative;
 }
 
-.marginTop(@mt){
-    margin-top: @mt;
+.big-model-big-title-font{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.big-model-small-title-font{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.big-model-center-blod-font{
+    font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif; /*Montserrat自定义字体*/
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bg-gray{
+    background-color: #f7f7f7;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
+}
+
+.color-commentText{
+    color: #888;
+}
+
+.bg-cyanine{
+    background-color: #3eabb8;
+}
+
+.color-cyanine-hover:hover{
+    color: #3eabb8;
+}
+
+.bg-white-hover:hover{
+    background-color: white;
+}
+
+.hover-opacity-down{
+    opacity: .5;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+/*************************************************
+2(util utilXs) a component for center navbar-nav 
+<ul class="nav navbar-center-nav">
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                           link <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                    </li>
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                       link <span class="glyphicon glyphicon-arrow-right"></span>
+                       </a>
+                    </li>
+                   <li>
+                       <a href="#" class="link-arrow-ani">
+                           link <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                    </li>
+               </ul>
+*/
+.navbar-center-nav>li{
+    display: inline-block !important;
+}
+
+.navbar-center-nav{
+    text-align:center;
+}
+/*
+***************************************************
+*/
+
+.footer-font{
+    font-size: 13px;
+    color: #888;
+}
+
+.strong{
+    font-weight: 900;
+}
+
+.border-circle{
+    border-radius: 1000px;
+}
+
+.border-1px{
+    border-width: 1px;
+}
+
+.border-solid{
+    border-style: solid;
+}
+
+.bg-white{
+    background-color:white;
+}
+
+.bg-111{
+    background-color: #111;
 }
