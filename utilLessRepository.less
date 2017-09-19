@@ -1,0 +1,64 @@
+.height(@height){
+    height:@height; 
+}
+
+.width(@width){
+    height:@width; 
+}
+
+.size(@width,@height){
+    width: @width;
+    height: @height;
+}
+
+.bgImgUrl(@bgImgUrl){
+    background-image: @bgImgUrl;
+}
+
+.bgImgPn(@bgImgPn){
+    background-position: @bgImgPn;
+}
+
+.bgImgSe(@bgImgSe){
+    background-size: @bgImgSe;
+}
+
+.bgColor(@bgColor){
+    background-color: @bgColor;
+}
+
+.square(@size){
+    .size(@size,@size);
+}
+
+.paddingLeft(@pl){
+    padding-left: @pl;
+}
+
+.paddingRight(@pr){
+    padding-right: @pr;
+}
+
+.paddingTop(@pt){
+    padding-top: @pt;
+}
+
+.paddingBottom(@pb){
+    padding-bottom: @pb;
+}
+
+.padding(@paddingTp,@paddingRt,@paddingBm,@paddingLt){
+    padding: @arguments;
+}
+
+.padding(@padding){
+    padding: @padding;
+}
+
+.marginTop(@mt){
+    margin-top: @mt;
+}
+
+.color(@color){
+    color: @color;
+}
