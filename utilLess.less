@@ -1,3 +1,5 @@
+//导入的文件不是动态的，只是一个静态快照
+
 @import "utilLessRepository.less";
 @import "dataLess.less";
 
@@ -225,4 +227,58 @@ for the element's width is 0 that has class of row is absolute
 
 .bg-111{
     background-color: #111;
+}
+
+
+/*
+特效为字体加大 左边出现由中心向顶部和底部伸展的一个竖条，注意：此类要和nav类同时使用
+<ul class="nav nav-left-border">
+                            <li><a href="#" class="textNavBtn" role="button"><span>link</span></a></li>
+                            <li><a href="#" class="textNavBtn" role="button"><span>link</span></a></li>
+                            <li><a href="#" class="textNavBtn" role="button"><span>link</span></a></li>
+                            <li><a href="#" class="textNavBtn" role="button"><span>link</span></a></li>
+                            <li><a href="#" class="textNavBtn" role="button"><span>link</span></a></li>
+                        </ul>
+
+dataLess:
+@navLeftBorderColor:#333;
+@navLeftBorderBeforeLeft:-30px;
+@navLeftBorderBeforeBorderLeftWidth:1px;
+@navLeftBorderBeforeBorderStyle:solid;
+@navLeftBorderBeforeBorderColor:#333;
+@navLeftBorderSpanContent:" ";
+@navLeftBorderSpanDisplay:inline-block;
+@navLeftBorderBeforeHeight:18px;
+*/
+.nav-left-border>li>a>span{
+    .relative();
+    .display(@navLeftBorderSpanDisplay);
+    .color(@navLeftBorderColor);
+}
+
+.nav-left-border>li>a{
+    .transition;
+}
+
+.nav-left-border>li>a>span::before{
+    .content(@navLeftBorderSpanContent);
+    .inline-block();
+    .transition();
+    .absolute();
+    .height(@navLeftBorderBeforeHeight);
+    .transformOrigin(center);
+    .scaleY(0);
+    .left(@navLeftBorderBeforeLeft);
+    .borderLeftWidth(@navLeftBorderBeforeBorderLeftWidth);
+    .borderStyle(@navLeftBorderBeforeBorderStyle);
+    .borderColor(@navLeftBorderBeforeBorderColor);
+}
+
+.nav-left-border>li>a:hover{
+    font-size: 1.2em;
+    background-color: transparent !important;
+}
+
+.nav-left-border>li:hover>a>span::before{
+    .scaleY(1);
 }
