@@ -11,9 +11,9 @@
         //touchMoveComponent
         let touchMoveComponent=(function touchMoveComponentNS(){
             //touchstart touchmove touchend common NS
-            let touchFire=document.getElementById("touchSlideBlk")
-            ,tele=touchFire.dataset.targetele
-            ,rele=touchFire.dataset.relatedele
+            let touchFire=null
+            ,tele=null
+            ,rele=null
             
             //真实的dom节点对象,结构为{targetEle:[eleDom],relatedEle:[eleDoms]}
             ,domObject={}
@@ -28,6 +28,12 @@
             }
             ;
             
+            
+            function touchMoveComponentInitialData(){
+                touchFire=document.getElementById("touchSlideBlk");
+                tele=touchFire.dataset.targetele;
+                rele=touchFire.dataset.relatedele;
+            }
             
             //得到当前的坐标对象
             function getCurClientCoord(event){
@@ -327,7 +333,7 @@
                 function touchEndAction(){
                     _ergodic(domObject,eleAni);
                     reset();
-                    touchMoveComponentStart();
+                    touchstartNS();
                 }
                 
                 $("#touchSlideBlk").bind("touchend",touchEndAction);
@@ -336,6 +342,7 @@
             
             //组件开启控制器 域的级别为组件级别 在调用此方法时 方法级别的域才开启
             function touchMoveComponentStart(){
+                touchMoveComponentInitialData();
                 touchstartNS();
                 touchmoveNS();
                 touchendNS();
@@ -352,5 +359,5 @@
         };
         
     })();
-    
-    db.touchMoveComponent.touchMoveComponentStart();
+
+    $(db.touchMoveComponent.touchMoveComponentStart);
