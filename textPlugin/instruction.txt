@@ -1,0 +1,20 @@
+文章的组件 
+   textData为测试用的JSON对象，结构为
+   {
+   "title":...
+   ,"parts":[
+   {
+   "partTitle":...
+   ,"ps":[一段文字，一段文字，]
+   ,"imgs":[图片的URL，图片的URL] 若无图片则为空数组
+   }
+   ,...
+   ]
+   }
+   
+   ReactDOM.render(
+            <Text textData={textData}/>
+            ,document.getElementById("TextBoxCol")
+        );
+    textData为JSON对象即可，
+    TextBoxCol可以是任意类为textBox的element
