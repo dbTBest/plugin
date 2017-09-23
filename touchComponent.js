@@ -1,7 +1,18 @@
-    <div id="touchSlideBlk" data-targetEle=".nav-left-border" data-relatedEle="#textSection .navbar"></div>
-
+<div id="touchSlideBlk" data-targetEle=".nav-left-border" data-relatedEle="#textSection .navbar"></div>
+    <script type="text/javascript">
         
+        
+        //默认开启db命名空间（顶级域）和组件命名空间（组件级别的域）方法级别的域要调用组件对应的start方法才会开启
     var db=(function dbNameSpace(){
+        
+        //db命名空间数据定义方法,将键值对添加到指定的dom元素的dbData属性中
+        function setdbData(dom,k,v){
+            dom.dbData===undefined&&(dom.dbData={});
+            dom.dbData[k]=v;
+            
+            console.log(dom,dom.dbData);
+        }
+        
         
         //touchMoveComponent
         let touchMoveComponent=(function touchMoveComponentNS(){
@@ -10,9 +21,8 @@
             ,tele=touchFire.dataset.targetele
             ,rele=touchFire.dataset.relatedele
             
-            //真实的dom节点对象
+            //真实的dom节点对象,结构为{targetEle:[eleDom],relatedEle:[eleDoms]}
             ,domObject={}
-            
             
             
             //储存的上一次的触摸点视口坐标对象
@@ -147,7 +157,6 @@
             }
                 
                 
-                
                 //使元素可移动视觉上也不会产生改变
                 function eleMoveAble(){
 
@@ -165,7 +174,7 @@
                             return ele.getBoundingClientRect();
                         }
 
-                        //改变元素position,固定其坐标
+                        //改变元素position,固定其坐标,并且储存坐标对象在dom上的originalPosi属性中，使用db组件数据储存方法setdbData(ele/*dom*/,k,v)
                         function fixEle(ele/*Domelement*/,coord/*一个包涵坐标值的对象*/){
                             $(ele).css({
                                 position:"fixed"
@@ -190,8 +199,10 @@
                         $(ele).css(eleSizeStyle);
 
                         ((elePostionStyle==='static')||(elePostionStyle==='relative'))&&(()=>{
+                            setdbData(ele,"originalPosi",elePositionInfo);
+                            
                             let eleClone=$(ele).clone();
-                            $(eleClone).css({
+                            eleClone.css({
                                 opacity:0
                             });
                             
@@ -217,16 +228,102 @@
             
             //touchmoveNs
             function touchmoveNS(){
-                function touchMoveAction(){
+                
+                let offsetClientCoordObj={cx:0,cy:0};
+                
+                //设置偏移量对象offsetClientCoordObj，结构为{cx:0,cy:0}
+                function getCurrentOffset(event){
+                    let coord=event.targetTouches[0]
+                    ,curClientCoordObj={
+                        cx:coord.clientX
+                        ,cy:coord.clientY
+                    }
+                    ;
                     
+                    for(let k in curClientCoordObj){
+                        offsetClientCoordObj[k]=curClientCoordObj[k]-storedClientCoordObj[k];
+                        storedClientCoordObj[k]=curClientCoordObj[k];
+                    }
+                }
+                
+                //移动元素
+                function moveEles(eles){
+                    for(let k in eles){
+                        let v=eles[k];
+                        if($.isArray(v)){
+                            moveEles(v);
+                        }else{
+                            if(offsetClientCoordObj.cx<0){
+                                $(v).css({
+                                left:"-="+Math.abs(offsetClientCoordObj.cx)+"px"
+                            });
+                            }else{
+                                $(v).css({
+                                left:"+="+offsetClientCoordObj.cx+"px"
+                            });
+                            }
+                        }
+                    }
                 }
                 
                 
+                //组件内的方法  域的级别为组件方法级别 在该域内定义的方法和变量围绕要绑定的事件处理程序，和其他方法域共有的变量和方法放在组件级别的域，
+                //action 为调用在方法域内定义的函数，形成合适的逻辑，这样的话需要的变量和函数只定义一次，节省内存
+                function touchMoveAction(event){
+                    getCurrentOffset(event);
+                    moveEles(domObject);
+                }
+                
+                
+                $("#touchSlideBlk").bind("touchmove",touchMoveAction);
             }
             
+            //组件级别的遍历器eles可以是对象，数组，类数组对象，
+            function _ergodic(eles,callback){
+                for(let k in eles){
+                    if($.isArray(eles[k])){
+                        _ergodic(eles[k],callback);
+                    }else{
+                        callback.call(eles[k]);
+                    }
+                }
+            }
+            
+            
+            //touchendNS
+            function touchendNS(){
+                let aniTime='.3s'
+                ,aniTimeMS=300
+                ;
+                
+                function eleAni(){
+                    console.log(this);
+                    $(this).css({
+                        transition:"all "+aniTime+" ease-in-out"
+                    });
+                    
+                    $(this).css(this.dbData.originalPosi);
+                    
+                    setTimeout(()=>{
+                        $(this).css({
+                            transition:""
+                        });
+                    },300);
+                }
+                
+                function touchEndAction(){
+                    _ergodic(domObject.relatedEle,eleAni);
+                }
+                
+                $("#touchSlideBlk").bind("touchend",touchEndAction);
+            }
+            
+            
+            //组件开启控制器 域的级别为组件级别 在调用此方法时 方法级别的域才开启
             function touchMoveComponentStart(){
                 touchstartNS();
                 touchmoveNS();
+                touchendNS();
             }
             
             
@@ -403,3 +500,5 @@
 //        $("#touchSlideBlk").bind("touchmove",moveDom);
         
     })();
+        
+    </script>
