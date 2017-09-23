@@ -1,5 +1,10 @@
-文章的组件 
-   textData为测试用的JSON对象，结构为
+1.引入文件
+引入textPlugin.js文件 注意type="text/babel" 
+还需要引入解析babel文件
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+ 2 . 提供数据
+ textData为测试用的JSON对象，结构为
    {
    "title":...
    ,"parts":[
@@ -12,9 +17,10 @@
    ]
    }
    
-   ReactDOM.render(
+   
+   3.渲染
+   ReactDOM.render(
             <Text textData={textData}/>
             ,document.getElementById("TextBoxCol")
         );
-    textData为JSON对象即可，
     TextBoxCol可以是任意类为textBox的element
