@@ -1,0 +1,20 @@
+使用步骤：
+1.创建<div id="touchSlideBlk" data-targetEle=".classname" data-relatedEle="#idname .classname"></div>元素
+2.utilXsLess.less和dataLess.less 并在dataLess.less中设置你需要的滑动条的样式的变量值（比如在视口的左边还是右边，尺寸）
+3引入touchComponent.js
+4.你的隐藏在视图之外的滑动元素的XS样式需要自己设置,注意：选取left 不要使用right
+
+    data-tartgetEle="dt" data-relatedEle="dr"
+    dt：
+    1.     .className
+    2.     #idName
+    3.     tagName
+    tagName,className,idName的组成为\w,\d,-
+    仅允许单个值，如果为多个值会从之中提取出第一个合法值
+    
+    dr:
+    1.     .className
+    2.     #idName
+    3.     tagName
+    tagName,className,idName的组成为\w,\d,-
+    可以为多个值，多个值之间用空格隔开，前后可有空格    
